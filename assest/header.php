@@ -14,6 +14,7 @@
                     if ($_SESSION['role'] == "Admin"){
                     ?>
                     <a class="p-2 px-5 text-muted" href="categories.php">Category</a>
+                    <a class="p-2 px-5 text-muted" href="users.php">Users</a>
                     <?php }  ?>
                     <a class="p-2 px-5 text-muted" href="article.php">Posts</a>
                 </nav>

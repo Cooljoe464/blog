@@ -13,6 +13,9 @@ if ($conn) {
         case "category":
             delete($conn, $type, $id, "categories.php");
             break;
+        case "users":
+            delete($conn, $type, $id, "users.php");
+            break;
         default:
             break;
     }
