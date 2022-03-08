@@ -88,7 +88,7 @@ if ($_SESSION['role'] == "Admin"){
 
                         <td><?= $cnt ?></td>
                         <td><?= $row['article_title'] ?></td>
-                        <td class="text-break"><?= strip_tags(substr($row['article_content'], 0, 40)) . "..." ?></td>
+                        <td class="text-break"><?= strip_tags(substr($row['article_content'], 0, 100)) . "..." ?></td>
                         <td><img src="img/article/<?= $row['article_image'] ?>" style="width: 100px; height: auto;">
                         </td>
                         <td><?= $row['article_created_time'] ?></td>
@@ -116,6 +116,11 @@ if ($_SESSION['role'] == "Admin"){
                         $cnt = $cnt +1;
                         echo "</tr>";
                     endforeach;
+                    $a = '1';
+                    $b = &$a;
+                    $b = "2$b";
+                    echo $a."<br>";
+                    echo $b;
                     ?>
                     </tbody>
 
@@ -124,6 +129,8 @@ if ($_SESSION['role'] == "Admin"){
         </div>
 
     <?php
+
+
     }else{
     ?>
     <div class="row">
