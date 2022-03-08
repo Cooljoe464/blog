@@ -1,6 +1,10 @@
 <!-- Include Head -->
-<?php include "assest/head.php"; ?>
 <?php
+error_reporting(0);
+include "assest/head.php"; ?>
+<?php
+$message= $_GET['success'];
+$error= $_GET['error'];
 $stmt = $conn->prepare("SELECT category_id, category_name FROM category");
 $stmt->execute();
 $categories = $stmt->fetchAll();
@@ -30,6 +34,13 @@ $categories = $stmt->fetchAll();
             <div class="row">
 
                 <div class="col-lg-12 mb-4">
+                    <?php if ($message){  ?>
+                        <span class="alert alert-success"><?= $message; ?></span>
+                    <?php } ?>
+
+                    <?php if ($error){  ?>
+                        <span class="alert alert-error"><?= $error; ?></span>
+                    <?php } ?>
                     <!-- Form -->
                     <form action="assest/insert.php?type=article" method="POST" enctype="multipart/form-data">
                         <div class="form-group">

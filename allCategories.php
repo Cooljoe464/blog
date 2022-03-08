@@ -56,11 +56,12 @@ $categories = $stmt->fetchAll();
 
                     <tbody>
                         <?php
+                        $cnr =1;
                         foreach ($categories as $category) :
                             echo "<tr>";
                             ?>
 
-                            <td><?= $category['category_id'] ?></td>
+                            <td><?= $cnr ?></td>
                             <td><?= $category['category_name'] ?></td>
                             <td>
                                 <img src="img/category/<?= $category['category_image'] ?>" style="width: 100px; height: auto;">
@@ -81,6 +82,7 @@ $categories = $stmt->fetchAll();
                             </td>
 
                         <?php
+                            $cnt = $cnt +1;
                             echo "</tr>";
                         endforeach;
                         ?>

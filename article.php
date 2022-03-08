@@ -68,7 +68,7 @@ if ($_SESSION['role'] == "Admin"){
                 <table class='table table-striped table-bordered'>
                     <thead class='thead-dark'>
                     <tr>
-                        <th scope='col'>ID</th>
+                        <th scope='col'>S/N</th>
                         <th scope='col'>Title</th>
                         <th scope='col'>Content</th>
                         <th scope='col'>Image</th>
@@ -81,11 +81,12 @@ if ($_SESSION['role'] == "Admin"){
 
                     <tbody>
                     <?php
+                    $cnt = 1;
                     foreach ($data as $row) :
                         echo "<tr>";
                         ?>
 
-                        <td><?= $row['article_id'] ?></td>
+                        <td><?= $cnt ?></td>
                         <td><?= $row['article_title'] ?></td>
                         <td class="text-break"><?= strip_tags(substr($row['article_content'], 0, 40)) . "..." ?></td>
                         <td><img src="img/article/<?= $row['article_image'] ?>" style="width: 100px; height: auto;">
@@ -112,6 +113,7 @@ if ($_SESSION['role'] == "Admin"){
                         </td>
 
                         <?php
+                        $cnt = $cnt +1;
                         echo "</tr>";
                     endforeach;
                     ?>

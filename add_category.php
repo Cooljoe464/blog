@@ -1,5 +1,8 @@
-<!-- Include Head -->
-<?php include "assest/head.php"; ?>
+<?php
+$message= $_GET['success'];
+$error= $_GET['error'];
+
+include "assest/head.php"; ?>
 
 <title>Add Category</title>
 </head>
@@ -24,6 +27,14 @@
             <div class="row">
 
                 <div class="col-lg-12 mb-4">
+                    <?php if ($message){  ?>
+                        <span class="alert alert-success"><?= $message; ?></span>
+                    <?php } ?>
+
+                    <?php if ($error){  ?>
+                        <span class="alert alert-error"><?= $error; ?></span>
+                    <?php } ?>
+
                     <!-- Form -->
                     <form action="assest/insert.php?type=category" method="POST" enctype="multipart/form-data">
                         <div class="form-group">

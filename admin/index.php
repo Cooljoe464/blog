@@ -1,4 +1,3 @@
-<?php //include "assest/head.php"; ?>
 <?php
 $conn = new mysqli("localhost", "root", "", "blog");
 session_start();

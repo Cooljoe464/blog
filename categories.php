@@ -47,7 +47,7 @@ $categories = $stmt->fetchAll();
 
                     <thead class='thead-dark'>
                         <tr>
-                            <th scope='col'>ID</th>
+                            <th scope='col'>S/N</th>
                             <th scope='col'>Name</th>
                             <th scope='col'>Image</th>
                             <th scope='col'>Color</th>
@@ -57,11 +57,12 @@ $categories = $stmt->fetchAll();
 
                     <tbody>
                         <?php
+                        $cnt = 1;
                         foreach ($categories as $category) :
                             echo "<tr>";
                             ?>
 
-                            <td><?= $category['category_id'] ?></td>
+                            <td><?= $cnt ?></td>
                             <td><?= $category['category_name'] ?></td>
                             <td>
                                 <img src="img/category/<?= empty($category['category_image']) ? "no-image-available.png" : $category['category_image']; ?>" style="width: 100px; height: 60px;">
@@ -82,6 +83,7 @@ $categories = $stmt->fetchAll();
                             </td>
 
                         <?php
+                            $cnt = $cnt +1;
                             echo "</tr>";
                         endforeach;
                         ?>
